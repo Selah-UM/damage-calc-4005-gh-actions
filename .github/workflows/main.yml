@@ -37,7 +37,7 @@ jobs:
         run: yarn add --dev jest-junit
 
       - name: Run test with JUnit as reporter
-        run: npx jest --ci --runInBand --reporters=drfalut --reporters=jest-funit
+        run: npx jest --ci --runInBand --reporters=defalut --reporters=jest-funit
         env:
           JEST_JENIT_OUTPUT_DIR: "./junit.test-results.xml"
       - uses: actions/upload-artifact@v2
