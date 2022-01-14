@@ -27,7 +27,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Use Node.js v14.15.4
-        uses: actions/setuo-node@v1
+        uses: actions/setup-node@v1
         with:
           node-version: '14.15.4'
           
