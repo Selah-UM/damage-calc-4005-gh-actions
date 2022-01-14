@@ -30,7 +30,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.15.4'
-          
-      - run: yarn install
-      - run: yarn test
 
+      - run: yarn install
+
+      - name: Install JUnit coverage reporter
+        run: yarn add --dev jest-funit
+
+      - name: Run test with JUnit as reporter
+        run: npx jest --ci --runInBand --reporters=drfalut --reporters=jest-funit
+        env:
+          JEST_JENIT_OUTPUT_DIR: "./junit.test-results.xml"
+      - uses: actions/upload-artifact@v2
+        with:
+          path: ./junit/test-results.xml
+        if: always()
