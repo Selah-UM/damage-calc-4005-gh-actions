@@ -34,7 +34,7 @@ jobs:
       - run: yarn install
 
       - name: Install JUnit coverage reporter
-        run: yarn add --dev jest-funit
+        run: yarn add --dev jest-junit
 
       - name: Run test with JUnit as reporter
         run: npx jest --ci --runInBand --reporters=drfalut --reporters=jest-funit
